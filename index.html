@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gerador de senha do Noah</title>
+</head>
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3d3c4d;
+    }
+
+    #password {
+      font-size: 50px;
+      font-weight: bold;
+      color: #f2e9f1;
+      text-align: center;
+      margin: 125px 0;
+    }
+  </style>
+
+<body>
+    
+    <p id="password"></p>
+
+    <script>
+        
+        function generatePassword() {
+        const symbols = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+        const chars = symbols + "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        let password = "";
+        for (let i = 0; i < 12; i++) {
+          password += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return password;
+      }
+
+      const password = generatePassword();
+      document.getElementById("password").innerHTML = password;
+
+    </script>
+
+</body>
+</html>
